@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script type="text/javascript" src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wall">
+        <div class="margines">
+            Warsaw:
+        </div>
+        <div class="clockW">
+            <div class="hand seconds warsaw"></div>
+            <div class="hand minutes warsaw"></div>
+            <div class="hand hours warsaw"></div>
+        </div>
+        <div class="margines">
+            New York:
+        </div>
+        <div class="clockN">
+            <div class="hand seconds newyork"></div>
+            <div class="hand minutes newyork"></div>
+            <div class="hand hours newyork"></div>
+        </div>
+        <div class="margines">
+            Los Angeles:
+        </div>
+        <div class="clockL">
+            <div class="hand seconds losangeles"></div>
+            <div class="hand minutes losangeles"></div>
+            <div class="hand hours losangeles"></div>
+        </div>
+        <div class="margines">
+            Bejing:
+        </div>
+        <div class="clockB">
+            <div class="hand seconds bejing"></div>
+            <div class="hand minutes bejing"></div>
+            <div class="hand hours bejing"></div>
+        </div>
+        <div class="margines">
+            Sydney:
+        </div>
+        <div class="clockS">
+            <div class="hand seconds sydney"></div>
+            <div class="hand minutes sydney"></div>
+            <div class="hand hours sydney"></div>
+        </div>
+    </div>
+
+    <div>
+        <p id="obecnaGodzina"> </p>
+        <p id="czasBudzika"> </p>
+    </div>
+    
+    <script type="text/javascript">
+    window.setInterval(function () {
+    const date = new Date();
+    const hours = document.querySelector('.hours.warsaw');
+    hours.style.transform = `rotate(${date.getHours() / 12 * 360}deg)`;
+    const minutes = document.querySelector('.minutes.warsaw');
+    minutes.style.transform = `rotate(${date.getMinutes() / 60 * 360}deg)`;
+    const seconds = document.querySelector('.seconds.warsaw');
+    seconds.style.transform = `rotate(${date.getSeconds() / 60 * 360}deg)`;
+}, 1000);
+
+   /* window.setInterval(function alarm() {
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    if (m = 24) {
+        alert ("dsadasa");
+    }
+}, 1000*50000);
+
+function x() {
+    while (true) {*/
+        
+            window.setInterval(function czas() {
+                let d = new Date();
+                let h = d.getHours();
+                if (h<10) {
+                    h="0"+h;
+                }
+                let m = d.getMinutes();
+                if (m<10) {
+                    m="0"+m;
+                }
+                let s = d.getSeconds();
+                if (s<10) {
+                    s="0"+s;
+                }
+            godzinaBudzik = 7; //ustaw godzinę budzika
+            if (godzinaBudzik<10) 
+            godzinaBudzik="0"+godzinaBudzik
+            
+            minutaBudzik = 55; //ustaw minutę budzika
+            if (minutaBudzik<10) 
+            minutaBudzik="0"+minutaBudzik
+            
+            sekundaBudzik = 00; //ustaw sekundę budzika
+            if (sekundaBudzik<10) 
+            sekundaBudzik="0"+sekundaBudzik
+
+            document.getElementById('czasBudzika').innerHTML=
+            "Budzik ustawiony na: " + godzinaBudzik
+             + ":" + minutaBudzik + ":" + sekundaBudzik;
+
+            document.getElementById('obecnaGodzina').innerHTML="Obecna godzina: " + h + ":" + m + ":" + s;
+            if (h==godzinaBudzik && m==minutaBudzik && s==sekundaBudzik) {
+                alert("Wstawaj! Jest już " + h + ":" + m + ":" + s);
+            }
+        
+    }, 10);
+//}
+//}
+
+
+
+</script>
+
+<script type="text/javascript">
+    window.setInterval(function () {
+    const date = new Date();
+    const hours = document.querySelector('.hours.newyork');
+    hours.style.transform = `rotate(${(date.getHours()-6) / 12 * 360}deg)`;
+    const minutes = document.querySelector('.minutes.newyork');
+    minutes.style.transform = `rotate(${date.getMinutes() / 60 * 360}deg)`;
+    const seconds = document.querySelector('.seconds.newyork');
+    seconds.style.transform = `rotate(${date.getSeconds() / 60 * 360}deg)`;
+    }, 1000);
+</script>
+
+<script type="text/javascript">
+    window.setInterval(function () {
+    const date = new Date();
+    const hours = document.querySelector('.hours.losangeles');
+    hours.style.transform = `rotate(${(date.getHours()-9) / 12 * 360}deg`;
+    const minutes = document.querySelector('.minutes.losangeles');
+    minutes.style.transform = `rotate(${date.getMinutes() / 60 * 360}deg)`;
+    const seconds = document.querySelector('.seconds.losangeles');
+    seconds.style.transform = `rotate(${date.getSeconds() / 60 * 360}deg)`;
+    }, 1000);
+</script>
+
+<script type="text/javascript">
+    window.setInterval(function () {
+    const date = new Date();
+    const hours = document.querySelector('.hours.bejing');
+    hours.style.transform = `rotate(${(date.getHours()+6) / 12 * 360}deg)`;
+    const minutes = document.querySelector('.minutes.bejing');
+    minutes.style.transform = `rotate(${date.getMinutes() / 60 * 360}deg)`;
+    const seconds = document.querySelector('.seconds.bejing');
+    seconds.style.transform = `rotate(${date.getSeconds() / 60 * 360}deg)`;
+    }, 1000);
+</script>
+
+<script type="text/javascript">
+    window.setInterval(function () {
+    const date = new Date();
+    const hours = document.querySelector('.hours.sydney');
+    hours.style.transform = `rotate(${(date.getHours()+8) / 12 * 360}deg)`;
+    const minutes = document.querySelector('.minutes.sydney');
+    minutes.style.transform = `rotate(${date.getMinutes() / 60 * 360}deg)`;
+    const seconds = document.querySelector('.seconds.sydney');
+    seconds.style.transform = `rotate(${date.getSeconds() / 60 * 360}deg)`;
+    }, 1000);
+</script>
+
+</body>
+</html>
